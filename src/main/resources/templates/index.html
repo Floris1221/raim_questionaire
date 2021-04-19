@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>User Registration</title>
+</head>
+<body>
+<div align="center">
+    <h1>User Registration</h1>
+    <form th:action="@{/add}" method="post" th:object="${responder}">
+        <label>Wiek:</label>
+        <input type="number" th:field="*{age}" /><br/>
+
+        <label>Plec:</label>
+        <input type="radio" th:field="*{sex}" value=True />Meszczyzna
+        <input type="radio" th:field="*{sex}" value=False />Kobieta<br/>
+
+        <label>Student</label>
+        <input type="checkbox" th:field="*{student}" /><br/>
+
+        <label>nazwa uczelni:</label>
+        <input type="text" th:field="*{collage}" /><br/>
+
+        <label>Imie</label>
+        <input type="text" th:field="*{name}" /><br/>
+
+        <label>Czas spendzony siedzac przed pandemia</label>
+        <input type="number" th:field="*{sittingTimeBef}" /><br/>
+
+        <label>Czas spendzony aktywnie przed pandemia</label>
+        <input type="number" th:field="*{activityTimeBef}" /><br/>
+
+        <label>Samopoczucie przed pandemia</label>
+        <input type="radio" th:field="*{well_beingBef}" value="BardzoZle" />Bardzo zle
+        <input type="radio" th:field="*{well_beingBef}" value="Zle" />Zle<br/>
+        <input type="radio" th:field="*{well_beingBef}" value="Dobre" />Dobre<br/>
+        <input type="radio" th:field="*{well_beingBef}" value="BardzoDobre" />Bardzo dobre<br/>
+
+        <label>Stan fizyczny przed pandemia</label>
+        <input type="radio" th:field="*{physicalHealthyBef}" value="BardzoZle" />Bardzo zle
+        <input type="radio" th:field="*{physicalHealthyBef}" value="Zle" />Zle<br/>
+        <input type="radio" th:field="*{physicalHealthyBef}" value="Srednie" />Srednie<br/>
+        <input type="radio" th:field="*{physicalHealthyBef}" value="Dobre" />Dobre<br/>
+        <input type="radio" th:field="*{physicalHealthyBef}" value="BardzoDobre" />Bardzo dobre<br/>
+
+        <label>Stan psychiczny przed pandemia</label>
+        <input type="radio" th:field="*{mentalHealthyBef}" value="BardzoZle" />Bardzo zle
+        <input type="radio" th:field="*{mentalHealthyBef}" value="Zle" />Zle<br/>
+        <input type="radio" th:field="*{mentalHealthyBef}" value="Srednie" />Srednie<br/>
+        <input type="radio" th:field="*{mentalHealthyBef}" value="Dobre" />Dobre<br/>
+        <input type="radio" th:field="*{mentalHealthyBef}" value="BardzoDobre" />Bardzo dobre<br/>
+
+        <label>Czas spendzony siedzac w trakcie pandemi</label>
+        <input type="number" th:field="*{sittingTimeAft}" /><br/>
+
+        <label>Czas spendzony aktywnie w trakcie pandemi</label>
+        <input type="number" th:field="*{activityTimeBef}" /><br/>
+
+        <label>Samopoczucie w trakcie pandemii</label>
+        <input type="radio" th:field="*{well_beingAft}" value="BardzoZle" />Bardzo zle
+        <input type="radio" th:field="*{well_beingAft}" value="Zle" />Zle<br/>
+        <input type="radio" th:field="*{well_beingAft}" value="Dobre" />Dobre<br/>
+        <input type="radio" th:field="*{well_beingAft}" value="BardzoDobre" />Bardzo dobre<br/>
+
+        <label>Stan fizyczny w trakcie pandemi</label>
+        <input type="radio" th:field="*{physicalHealthyAft}" value="BardzoZle" />Bardzo zle
+        <input type="radio" th:field="*{physicalHealthyAft}" value="Zle" />Zle<br/>
+        <input type="radio" th:field="*{physicalHealthyAft}" value="Srednie" />Srednie<br/>
+        <input type="radio" th:field="*{physicalHealthyAft}" value="Dobre" />Dobre<br/>
+        <input type="radio" th:field="*{physicalHealthyAft}" value="BardzoDobre" />Bardzo dobre<br/>
+
+        <label>Stan psychiczny w trakcie pandemi</label>
+        <input type="radio" th:field="*{mentalHealthyAft}" value="BardzoZle" />Bardzo zle
+        <input type="radio" th:field="*{mentalHealthyAft}" value="Zle" />Zle<br/>
+        <input type="radio" th:field="*{mentalHealthyAft}" value="Srednie" />Srednie<br/>
+        <input type="radio" th:field="*{mentalHealthyAft}" value="Dobre" />Dobre<br/>
+        <input type="radio" th:field="*{mentalHealthyAft}" value="BardzoDobre" />Bardzo dobre<br/>
+
+        <label>Dieta</label>
+        <input type="radio" th:field="*{dieta}" value="NieZdrowa" />Nie zdrowa
+        <input type="radio" th:field="*{dieta}" value="RaczejnieZdrowa" />Raczej nie zdrowa<br/>
+        <input type="radio" th:field="*{dieta}" value="RaczejZdrowa" />Raczej zdrowa<br/>
+        <input type="radio" th:field="*{dieta}" value="Zdrowa" />Zdrowa<br/>
+
+
+
+        <label>Czy bierzesz jakies leki</label>
+        <input type="checkbox" th:field="*{takeMedicament}" /><br/>
+
+        <label>Leki</label>
+        <input type="text" th:field="*{medicament}" /><br/>
+
+        <label>Czy jestes chory</label>
+        <input type="checkbox" th:field="*{haveIlness}" /><br/>
+
+        <label>Choroba</label>
+        <input type="text" th:field="*{ilness}" /><br/>
+
+
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>
