@@ -18,7 +18,7 @@ public class ResponderControler {
         this.responderService = responderService;
     }
 
-    @GetMapping("/form")
+    @GetMapping("/")
     public String showForm(Model model){
         Responder responder = new Responder();
         model.addAttribute("responder",responder);
