@@ -21,14 +21,16 @@ public class ResponderControler {
     @GetMapping("/")
     public String showForm(Model model){
         Responder responder = new Responder();
+        Diseases diseases = new Diseases();
         model.addAttribute("responder",responder);
+        model.addAttribute("diseases",diseases);
         return "index";
     }
 
 
     @PostMapping("/add")
-    public String registerNewResponder(@ModelAttribute Responder responder){
-        responderService.addNewResponder(responder);
+    public String registerNewResponder(@ModelAttribute Responder responder,@ModelAttribute Diseases diseases){
+        responderService.addNewResponder(responder,diseases);
         return "index";
     }
 

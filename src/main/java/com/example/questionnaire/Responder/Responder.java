@@ -12,17 +12,15 @@ public class Responder {
     enum PhyHealth {BardzoZle, Zle, Srednie, Dobre, BardzoDobre}
     enum MentHealth {BardzoZle, Zle, Srednie, Dobre, BardzoDobre}
     enum Dieta {NieZdrowa,Raczejniezdrowa,RaczejZdrowa,Zdrowa}
+    enum Time {zero_cztery,cztery_osiem,osiem_dwanascie,ponad_dwanascie}
+
+
 
 
     @Id
-    @SequenceGenerator(
-            name = "responder_sequence",
-            sequenceName = "responder_sequence",
-            allocationSize = 1
-    )
+
     //identify
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-    generator = "responder_sequence")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private int age;
     private boolean sex;
@@ -31,25 +29,27 @@ public class Responder {
     private String name;
     //question information
     //before pandemic
-    private int sittingTimeBef;
-    private int activityTimeBef;
+    private Time sittingTimeBef;
+    private Time activityTimeBef;
     private Comfort well_beingBef;
     private PhyHealth physicalHealthyBef;
     private MentHealth mentalHealthyBef;
     //after pandemic
-    private int sittingTimeAft;
-    private int activityTimeAft;
+    private Time sittingTimeAft;
+    private Time activityTimeAft;
     private Comfort well_beingAft;
     private PhyHealth physicalHealthyAft;
     private MentHealth mentalHealthyAft;
+    private Time BMI;
+    private Comfort spendtime;
 
 
     private Dieta dieta;
-    private boolean takeMedicament;
-    private ArrayList<String> medicament;
     private boolean haveIlness;
-    private ArrayList<String> ilness;
-
+    private boolean takeMedicament;
+    private String comment;
+    @OneToOne(targetEntity = Diseases.class, cascade = CascadeType.ALL)
+    private Diseases diseases;
 
 
 
@@ -94,19 +94,19 @@ public class Responder {
         this.name = name;
     }
 
-    public int getSittingTimeBef() {
+    public Time getSittingTimeBef() {
         return sittingTimeBef;
     }
 
-    public void setSittingTimeBef(int sittingTimeBef) {
+    public void setSittingTimeBef(Time sittingTimeBef) {
         this.sittingTimeBef = sittingTimeBef;
     }
 
-    public int getActivityTimeBef() {
+    public Time getActivityTimeBef() {
         return activityTimeBef;
     }
 
-    public void setActivityTimeBef(int activityTimeBef) {
+    public void setActivityTimeBef(Time activityTimeBef) {
         this.activityTimeBef = activityTimeBef;
     }
 
@@ -134,19 +134,19 @@ public class Responder {
         this.mentalHealthyBef = mentalHealthyBef;
     }
 
-    public int getSittingTimeAft() {
+    public Time getSittingTimeAft() {
         return sittingTimeAft;
     }
 
-    public void setSittingTimeAft(int sittingTimeAft) {
+    public void setSittingTimeAft(Time sittingTimeAft) {
         this.sittingTimeAft = sittingTimeAft;
     }
 
-    public int getActivityTimeAft() {
+    public Time getActivityTimeAft() {
         return activityTimeAft;
     }
 
-    public void setActivityTimeAft(int activityTimeAft) {
+    public void setActivityTimeAft(Time activityTimeAft) {
         this.activityTimeAft = activityTimeAft;
     }
 
@@ -190,12 +190,12 @@ public class Responder {
         this.takeMedicament = takeMedicament;
     }
 
-    public ArrayList<String> getMedicament() {
-        return medicament;
+    public String getComment() {
+        return comment;
     }
 
-    public void setMedicament(ArrayList<String> medicament) {
-        this.medicament = medicament;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public boolean isHaveIlness() {
@@ -205,12 +205,39 @@ public class Responder {
     public void setHaveIlness(boolean haveIllness) {
         this.haveIlness = haveIllness;
     }
-
-    public ArrayList<String> getIlness() {
-        return ilness;
+    public Diseases getDiseases(Diseases diseases) {
+        return this.diseases;
     }
 
-    public void setIlness(ArrayList<String> ilness) {
-        this.ilness = ilness;
+    public void setDiseases(Diseases diseases) {
+        this.diseases = diseases;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isSex() {
+        return sex;
+    }
+
+    public Time getBMI() {
+        return BMI;
+    }
+
+    public void setBMI(Time BMI) {
+        this.BMI = BMI;
+    }
+
+    public Comfort getSpendtime() {
+        return spendtime;
+    }
+
+    public void setSpendtime(Comfort spendtime) {
+        this.spendtime = spendtime;
     }
 }
