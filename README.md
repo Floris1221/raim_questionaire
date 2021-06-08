@@ -8,14 +8,14 @@
 ### and change port number in spring.datasource.url on port which your database is running.
 ### Then change the spring.datasource.username and spring.datasource.password on your private setup.
 
-![Screenshot](app_prop.png)
+![Test Image 1](app_prop.png)
 
 ### 3. Run the app starting main program in src\main\java\com\example\questionnaire name QuestionnaireApplication.java
 
 ### 4. In your browser type localhost:[port number]. You can find port number which on application is running
 ### in one of the log.
 
-![Screenshot](port_nr.png)
+![Test Image 2](port_nr.png)
 
 ## Directory description
 
