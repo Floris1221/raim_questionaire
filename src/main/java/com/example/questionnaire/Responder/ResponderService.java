@@ -29,6 +29,5 @@ public class ResponderService {
         responder.setDiseases(diseases);
         responderRepository.save(responder);
         diseasesRepository.save(diseases);
-        System.out.println(responder);
     }
 }
