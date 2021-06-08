@@ -15,7 +15,7 @@
 ### 4. In your browser type localhost:[port number]. You can find port number which on application is running
 ### in one of the log.
 
-![Test Image 2](port_nr.png)
+![Test Image 2](port_nr.PNG)
 
 ## Directory description
 
