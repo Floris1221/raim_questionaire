@@ -1,4 +1,4 @@
-##Usage
+## Usage
 
 ### 1. Copy this repository to the folder on your computer
 
@@ -8,14 +8,14 @@
 ### and change port number in spring.datasource.url on port which your database is running.
 ### Then change the spring.datasource.username and spring.datasource.password on your private setup.
 
-![alt text](README_Picture/app_prop.png)
+![Screenshot](README_Picture/app_prop.png)
 
 ### 3. Run the app starting main program in src\main\java\com\example\questionnaire name QuestionnaireApplication.java
 
 ### 4. In your browser type localhost:[port number]. You can find port number which on application is running
 ### in one of the log.
 
-![alt text](README_Picture/port.png)
+![Screenshot](README_Picture/port_nr.png)
 
 ## Directory description
 
